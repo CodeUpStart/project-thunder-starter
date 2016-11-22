@@ -1,0 +1,26 @@
+<ion-view view-title="Discover" class="discover-page">
+  <ion-content scroll="false">
+    <div class="list card current-product"
+    ng-class="{skipped: currentProduct.rated == false,
+    favorited: currentProduct.rated == true}"
+    ng-show="currentProduct && !currentProduct.hide">
+      <div class="item item-image">
+        <img ng-src="{{ currentProduct.thumbnail}}">
+      </div>
+      <div class="item">
+        <h2>{{currentProduct.name}}</h2>
+        <p>{{currentProduct.tagline}}</p>
+      </div>
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" ng-click="sendFeedback(false)">
+          <i class="icon ion-close"></i>
+          Skip
+        </a>
+        <a class="tab-item" ng-click="sendFeedback(true)">
+          <i class="icon ion-heart"></i>
+          Favorite
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
